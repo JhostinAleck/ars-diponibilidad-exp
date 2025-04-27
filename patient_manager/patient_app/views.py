@@ -96,7 +96,7 @@ def generate_patient_pdf(request, patient_id):
     
     # Creamos la respuesta HTTP con el PDF
     response = HttpResponse(content_type='application/pdf')
-    response['Content-Disposition'] = f'attachment; filename="paciente_{patient_id}.pdf"'
+    response['Content-Disposition'] = f'inline; filename="paciente_{patient_id}.pdf"'
     response.write(pdf)
     
     return response
